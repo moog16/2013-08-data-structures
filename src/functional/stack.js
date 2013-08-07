@@ -14,6 +14,7 @@ var makeStack = function(){
   };
 
   stack.size = function(){
+    return 0;
   };
 
   return stack;

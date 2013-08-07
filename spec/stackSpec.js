@@ -27,11 +27,13 @@ describe("stack", function() {
   });
 
   it('should report its size correctly', function() {
-    var a = 'a', b = 'b', c = 'c';
+    expect(stack.size()).equal(0);
+  });
 
-    stack.push(a);
-    stack.push(b);
-    stack.push(c);
+  it('should report its size correctly', function() {
+    stack.push('a');
+    stack.push('b');
+    stack.push('c');
     expect(stack.size()).equal(3);
 
     stack.pop();
