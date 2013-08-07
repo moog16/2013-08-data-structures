@@ -25,8 +25,13 @@ describe("queue", function() {
     expect(function(){queue.dequeue()}).not.throws();
   });
 
-  it('should report its size correctly', function() {
+  it('should report 0 on an empty queue', function() {
     expect(queue.size()).equal(0);
+  });
+
+  it('should report 1 with one enqueued item', function() {
+    queue.enqueue('a');
+    expect(queue.size()).equal(1);
   });
 
   it('should report its size correctly', function() {
