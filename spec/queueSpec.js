@@ -26,6 +26,10 @@ describe("queue", function() {
   });
 
   it('should report its size correctly', function() {
+    expect(queue.size()).equal(0);
+  });
+
+  it('should report its size correctly', function() {
     var a = 'a', b = 'b', c = 'c';
 
     queue.enqueue(a);
