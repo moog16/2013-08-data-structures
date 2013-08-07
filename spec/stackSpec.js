@@ -18,21 +18,21 @@ describe("stack", function() {
   it('should have "push", "pop", and "size" methods', function() {
     expect(stack.push).to.be.a('function');
     expect(stack.pop).to.be.a('function');
-    expect(stack.size).to.be.a('function');
+    expect(stack.getSize).to.be.a('function');
   });
 
 
   it('should not error when popping from an empty stack', function() {
-    expect(function(){stack.pop()}).not.throws();
+    expect(function(){stack.pop();}).not.throws();
   });
 
   it('should return 0 when the stack is empty', function() {
-    expect(stack.size()).equal(0);
+    expect(stack.getSize()).equal(0);
   });
 
   it('should return 1 when we push a single item to empty stack', function() {
     stack.push('a');
-    expect(stack.size()).equal(1);
+    expect(stack.getSize()).equal(1);
   });
 
   it('should return last element in stack when popped', function() {
@@ -44,15 +44,15 @@ describe("stack", function() {
     stack.push('a');
     stack.push('b');
     stack.push('c');
-    expect(stack.size()).equal(3);
+    expect(stack.getSize()).equal(3);
 
     stack.pop();
-    expect(stack.size()).equal(2);
+    expect(stack.getSize()).equal(2);
 
     stack.pop();
     stack.pop();
     stack.pop();
-    expect(stack.size()).equal(0);
+    expect(stack.getSize()).equal(0);
   });
 
   it('should pop items in the LIFO order', function() {
@@ -86,7 +86,7 @@ describe("stack", function() {
         expect(stack.__proto__).to.be.a('object');
         expect(stack.__proto__.push).to.be.a('function');
         expect(stack.__proto__.pop).to.be.a('function');
-        expect(stack.__proto__.size).to.be.a('function');
+        expect(stack.__proto__.getSize).to.be.a('function');
       });
     }
   }

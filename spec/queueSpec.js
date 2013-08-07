@@ -34,6 +34,11 @@ describe("queue", function() {
     expect(queue.size()).equal(1);
   });
 
+  it('should dequeue a single item and return a correct value', function() {
+    queue.enqueue('a');
+    expect(queue.dequeue()).equal('a');
+  });
+  
   it('should report its size correctly', function() {
     var a = 'a', b = 'b', c = 'c';
 

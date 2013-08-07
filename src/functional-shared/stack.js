@@ -1,32 +1,29 @@
 var makeStack = function(){
   // Use an object with numeric keys to store values
-  var storage = {};
-
-  var size = 0; // Hint: set an initial value here
+  var stack = {};
+      stack.storage = {};
+      stack.size = 0; // Hint: set an initial value here
 
   // Implement the methods below
-  var stack = {};
+  return _.extend(stack, makeStack.stackMethods);
 
-  _.extend(stack, makeStack.stackMethods);
-
-  return stack;
-
-});
+};
 
 makeStack.stackMethods = {};
 
 makeStack.stackMethods.push = function(value){
-  size++;
-  storage[size] = value;
+  this.size++;
+  this.storage[this.size] = value;
 };
 
 makeStack.stackMethods.pop = function(){
-  var result = storage[size];
-  delete storage[size];
-  size && size--;
+  var result = this.storage[this.size];
+  delete this.storage[this.size];
+  this.size && this.size--;
   return result;
 };
 
-makeStack.stackMethods.size = function(){
-  return size;
+makeStack.stackMethods.getSize = function(){
+
+  return this.size;
 };
