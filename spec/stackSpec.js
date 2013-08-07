@@ -35,6 +35,11 @@ describe("stack", function() {
     expect(stack.size()).equal(1);
   });
 
+  it('should return last element in stack when popped', function() {
+    stack.push('a');
+    expect(stack.pop()).equal('a');
+  });
+
   it('should report its size correctly', function() {
     stack.push('a');
     stack.push('b');
