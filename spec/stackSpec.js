@@ -26,8 +26,13 @@ describe("stack", function() {
     expect(function(){stack.pop()}).not.throws();
   });
 
-  it('should report its size correctly', function() {
+  it('should return 0 when the stack is empty', function() {
     expect(stack.size()).equal(0);
+  });
+
+  it('should return 1 when we push a single item to empty stack', function() {
+    stack.push('a');
+    expect(stack.size()).equal(1);
   });
 
   it('should report its size correctly', function() {
