@@ -11,14 +11,14 @@ var makeQueue = function(){
 
   queue.enqueue = function(value){
     storage[begin] = value;
-    begin++;
+    begin++;  //2
   };
 
   queue.dequeue = function(){
     var result = storage[end];
     delete storage[end];
     end++;
-    return result;
+    return result; 
   };
 
   queue.size = function(){

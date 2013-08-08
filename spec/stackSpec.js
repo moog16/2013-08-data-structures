@@ -15,7 +15,7 @@ describe("stack", function() {
   beforeEach(refreshStack);
 
   // Any stack implementation should have the following methods
-  it('should have "push", "pop", and "size" methods', function() {
+  it('should have "push", "pop", and " " methods', function() {
     expect(stack.push).to.be.a('function');
     expect(stack.pop).to.be.a('function');
     expect(stack.getSize).to.be.a('function');
